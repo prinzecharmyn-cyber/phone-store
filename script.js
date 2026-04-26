@@ -13,9 +13,9 @@ fetch('data/products.json')
       const card = document.createElement('div');
       card.className = 'product-card';
 
+      // Replace 234XXXXXXXXXX with the vendor’s WhatsApp number
       const whatsappMessage = `Hello, I'm interested in the ${product.name} priced at ₦${product.price}`;
-      const whatsappLink = `https://wa.me/2348038919878?text=${encodeURIComponent(whatsappMessage)}`;
-      // 👆 Replace 234XXXXXXXXXX with the vendor’s WhatsApp number
+      const whatsappLink = `https://wa.me/234XXXXXXXXXX?text=${encodeURIComponent(whatsappMessage)}`;
 
       card.innerHTML = `
         <img src="${product.image}" alt="${product.name}">
@@ -30,6 +30,7 @@ fetch('data/products.json')
         </div>
       `;
 
+      // Live Chat – Tawk.to integration
       const chatBtn = card.querySelector('.chat-live');
       chatBtn.addEventListener('click', function() {
         const productName = this.dataset.product;
