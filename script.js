@@ -15,7 +15,7 @@ fetch('data/products.json')
 
       // Replace 234XXXXXXXXXX with the vendor’s WhatsApp number
       const whatsappMessage = `Hello, I'm interested in the ${product.name} priced at ₦${product.price}`;
-      const whatsappLink = `https://wa.me/234XXXXXXXXXX?text=${encodeURIComponent(whatsappMessage)}`;
+      const whatsappLink = `https://wa.me/2348038919878?text=${encodeURIComponent(whatsappMessage)}`;
 
       card.innerHTML = `
         <img src="${product.image}" alt="${product.name}">
