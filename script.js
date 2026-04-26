@@ -33,10 +33,12 @@ fetch('data/products.json')
       const chatBtn = card.querySelector('.chat-live');
       chatBtn.addEventListener('click', function() {
         const productName = this.dataset.product;
-        if (window.tidioChatApi) {
-          window.tidioChatApi.setVisitorData({ distinct_id: productName });
-          window.tidioChatApi.messageFromVisitor(`Hi, I want to know more about "${productName}"`);
-          window.tidioChatApi.open();
+        if (window.Tawk_API) {
+          Tawk_API.setAttributes({
+            product: productName
+          }, function(error) {
+            Tawk_API.maximize();
+          });
         } else {
           alert('Live chat is loading, please try again in a moment.');
         }
